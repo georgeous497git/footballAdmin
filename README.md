@@ -12,22 +12,32 @@
 - Postman (Latest version to support Collection v2.1)
 
 ## Configuration
-1 - Follow and execute the instructions to prepare the NoSQL Data Base with MongoDB from the following repository:
+1 - Follow and execute the instructions to prepare the NoSQL Data Base with MongoDB from the following repository: https://github.com/georgeous497git/dockerMongoFootballAdmin
+
+
 2 - Follow and execute the instructions to prepare the Postman scripts for testing purpose from the following repository:
 
 
 ## Execution
 1 - Create a folder where you want to download the project. Enter to the folder created.
+
+
 2 - Clone the project into your local machine.
 ```sh
 git clone git@github.com:georgeous497git/footballAdmin.git
 ```
-2 - Once you downloaded the project execute the following command. (The project is already configured with basic configuration.)
+
+
+3 - Once you downloaded the project execute the following command. (The project is already configured with basic configuration.)
 ```sh
 ./gradlew bootRun
 ```
-3 - In the console a banner will be printed (Football Team).
-4 - **Execute the desired operations using swagger or the Postman Scripts.** 🤖
+
+
+4 - In the console a banner will be printed (Football Team).
+
+
+5 - **Execute the desired operations using swagger or the Postman Scripts.** 🤖
 
 ## Validation
 The project is already configured to use the **localhost** and the port **8082** to be able to use the Swagger Tool.
