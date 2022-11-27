@@ -29,7 +29,10 @@ git clone git@github.com:georgeous497git/footballAdmin.git
 ```
 
 
-3 - Once you downloaded the project execute the following command. (The project is already configured with basic configuration.)
+3 - Once you downloaded the project enter to the folder **footballAdmin** and execute the following command. (The project is already configured with basic configuration.)
+```sh
+cd footballAdmin
+```
 ```sh
 ./gradlew bootRun
 ```
