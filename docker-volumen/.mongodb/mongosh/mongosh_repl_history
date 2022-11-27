@@ -1,0 +1,17 @@
+show collections
+use football-admin-db
+show collections
+use footballplayer
+show collections
+show tables
+show collections
+db
+db.createRole( { role: "admin", privileges: [ { resource: { db: "football-admin-db", collection: "" }, actions: ["find", "update", "insert", "remove"] }], roles: [] }, { w: "majority", wtimeout: 5000 })
+use football-admin-db
+exit
+db
+db.createUser( { user: "admin1", pwd: "passadmin1", roles: [{ role: "admin", db: "football-admin-db" }] })
+use football-admin-db
+db.createRole( { role: "admin", privileges: [ { resource: { db: "football-admin-db", collection: "" }, actions: ["find", "update", "insert", "remove"] }], roles: [] }, { w: "majority", wtimeout: 5000 });
+use football-admin-db;
+use football-admin-dbtball-admin-db

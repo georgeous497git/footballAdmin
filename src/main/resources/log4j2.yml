@@ -1,0 +1,39 @@
+Configutation:
+  status: warn
+
+  Appenders:
+    #    Console:
+    #      name: CONSOLE
+    #      target: SYSTEM_OUT
+    #      PatternLayout:
+    #        Pattern: "[%d{yyyy-MM-dd HH:mm:ss}] %-5p [%c{3}] - %m%n"
+    RollingFile:
+      - name: APPLICATION
+        fileName: footballAdmin.log
+        filePattern: "footballAdmin%d{yyyy-MM-dd}-%i.log.gz"
+        PatternLayout:
+          Pattern: "[%d{yyyy-MM-dd HH:mm:ss}] %-5p [%c{3}] - %m%n"
+        policies:
+          TimeBasedTriggeringPolicy:
+            interval: 1
+            modulate: true
+
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        #        - ref: CONSOLE
+        - ref: APPLICATION
+    Logger:
+      - name: com.revisen
+        additivity: false
+        level: info
+        AppenderRef:
+          #          - ref: CONSOLE
+          - ref: APPLICATION
+      - name: com.revisen
+        additivity: false
+        level: debug
+        AppenderRef:
+          #          - ref: CONSOLE
+          - ref: APPLICATION

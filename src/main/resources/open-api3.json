@@ -1,0 +1,385 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Football Administrator Tool",
+    "version": "v1",
+    "contact": {
+      "name": "Jorge Correa Reyes",
+      "email": "georgeous497@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8082/football-admin",
+      "description": "Football Admin Local Execution Url"
+    }
+  ],
+  "tags": [
+    {"name":"Football Team Controller", "description": "Football Team Administrator"},
+    {"name":"Football Player Controller", "description": "Football Player Administrator"}
+  ],
+  "paths": {
+    "/v1/football-team/{id}": {
+      "get": {
+        "tags": ["Football Team Controller"],
+        "operationId": "getTeamsById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballTeamResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Football Team Controller"],
+        "operationId": "updateTeamById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FootballTeamRequest" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballTeamResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Football Team Controller"],
+        "operationId": "deleteTeamById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballTeamResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Football Team Controller"],
+        "operationId": "partialUpdateTeamById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FootballTeamRequest" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballTeamResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/football-player/{id}": {
+      "get": {
+        "tags": ["Football Player Controller"],
+        "operationId": "getPlayer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballPlayerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Football Player Controller"],
+        "operationId": "updatePlayer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FootballPlayerRequest" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballPlayerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Football Player Controller"],
+        "operationId": "deletePlayer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballPlayerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/football-team": {
+      "get": {
+        "tags": ["Football Team Controller"],
+        "operationId": "getTeams",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballTeamResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Football Team Controller"],
+        "operationId": "createTeam",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FootballTeamRequest" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballTeamResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/football-player": {
+      "get": {
+        "tags": ["Football Player Controller"],
+        "operationId": "getPlayers",
+        "parameters": [
+          {
+            "name": "filter.idTeam",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballPlayerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Football Player Controller"],
+        "operationId": "createPlayer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FootballPlayerRequest" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FootballPlayerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FootballPlayerRequest": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "example": "Jorge Correa" },
+          "age": { "type": "integer", "format": "int32", "example": 35 },
+          "rate": { "type": "number", "format": "double", "example": 56.7 },
+          "idTeam": { "type": "string", "example": "63805072bcf28908040fe9e0" }
+        }
+      },
+      "FootballTeamRequest": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "example": "Ajax FC" },
+          "country": { "type": "string", "example": "Amsterdam" },
+          "wins": { "type": "integer", "format": "int32", "example": 54 },
+          "football-players": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FootballPlayerRequest" }
+          }
+        }
+      },
+      "FootballPlayerEntity": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "6380585cf88ba8048ee23425" },
+          "name": { "type": "string", "example": "Rene"  },
+          "age": { "type": "integer", "format": "int32", "example": 24 },
+          "rate": { "type": "number", "format": "double", "example": 45.7  },
+          "idTeam": { "type": "string", "example": "63805072bcf28908040fe9e0" }
+        }
+      },
+      "FootballTeamEntity": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "63805072bcf28908040fe9e0" },
+          "name": { "type": "string", "example": "Philips Sport Vereniging" },
+          "country": { "type": "string", "example": "The Netherlands" },
+          "wins": { "type": "integer", "format": "int32", "example": 56 },
+          "football-players": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FootballPlayerEntity" }
+          }
+        }
+      },
+      "FootballTeamResponse": {
+        "type": "object",
+        "properties": { "data": { "$ref": "#/components/schemas/TeamData" } }
+      },
+      "TeamData": {
+        "type": "object",
+        "properties": {
+          "football-teams": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FootballTeamEntity" }
+          }
+        }
+      },
+      "FootballPlayerResponse": {
+        "type": "object",
+        "properties": { "data": { "$ref": "#/components/schemas/PlayerData" } }
+      },
+      "PlayerData": {
+        "type": "object",
+        "properties": {
+          "football-players": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FootballPlayerEntity" }
+          }
+        }
+      }
+    }
+  }
+}
