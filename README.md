@@ -16,6 +16,7 @@
 
 
 2 - Follow and execute the instructions to prepare the Postman scripts for testing purpose from the following repository:
+https://github.com/georgeous497git/postmanFootballAdmin
 
 
 ## Execution
@@ -49,8 +50,11 @@ http://localhost:8082/football-admin/swagger-ui/index.html
 
 #### TODO:
 1 - Improve the Test Coverage.
+
 2 - Improve the logging messages
+
 3 - Write the log file & output data file into a dedicated folder for each one.
+
 4 - Add Catching Exceptions (Due to deadline)
 ___________________________________________________________________________________
 Thanks.
