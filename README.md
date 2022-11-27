@@ -36,7 +36,7 @@ git clone git@github.com:georgeous497git/footballAdmin.git
 
 
 4 - In the console a banner will be printed (Football Team).
-
+<img src="https://github.com/georgeous497git/footballAdmin/blob/develop/gradlewBootrun.png" width="800" height="250">
 
 5 - **Execute the desired operations using swagger or the Postman Scripts.** 🤖
 
@@ -47,6 +47,7 @@ Example of URI for Swagger:
 ```sh
 http://localhost:8082/football-admin/swagger-ui/index.html
 ```
+<img src="https://github.com/georgeous497git/footballAdmin/blob/develop/swaggerFootballAdmin.png" width="800" height="350">
 
 #### TODO:
 1 - Improve the Test Coverage.
